@@ -570,9 +570,9 @@
         "len_km": 9,
         "area_km2": 2,
         "municipality": "Basilisa",
-        "is_zod": false,
+        "is_zod": true,
         "households": 91,
-        "no_toilet": 30
+        "no_toilet": 0
       },
       "id": 1608501004
     },
@@ -2327,9 +2327,9 @@
         "len_km": 18,
         "area_km2": 7,
         "municipality": "Basilisa",
-        "is_zod": false,
+        "is_zod": true,
         "households": 225,
-        "no_toilet": 58
+        "no_toilet": 0
       },
       "id": 1608501012
     },
@@ -4271,9 +4271,9 @@
         "len_km": 10,
         "area_km2": 6,
         "municipality": "Basilisa",
-        "is_zod": false,
+        "is_zod": true,
         "households": 305,
-        "no_toilet": 20
+        "no_toilet": 0
       },
       "id": 1608501015
     },
@@ -4806,9 +4806,9 @@
         "len_km": 10,
         "area_km2": 4,
         "municipality": "Basilisa",
-        "is_zod": false,
+        "is_zod": true,
         "households": 114,
-        "no_toilet": 17
+        "no_toilet": 0
       },
       "id": 1608501019
     },
@@ -4841,9 +4841,9 @@
         "len_km": 6,
         "area_km2": 2,
         "municipality": "Basilisa",
-        "is_zod": false,
+        "is_zod": true,
         "households": 235,
-        "no_toilet": 49
+        "no_toilet": 0
       },
       "id": 1608501020
     },
@@ -5042,9 +5042,9 @@
         "len_km": 10,
         "area_km2": 2,
         "municipality": "Basilisa",
-        "is_zod": false,
+        "is_zod": true,
         "households": 152,
-        "no_toilet": 46
+        "no_toilet": 0
       },
       "id": 1608501021
     },
@@ -5124,9 +5124,9 @@
         "len_km": 7,
         "area_km2": 2,
         "municipality": "Basilisa",
-        "is_zod": false,
+        "is_zod": true,
         "households": 193,
-        "no_toilet": 32
+        "no_toilet": 0
       },
       "id": 1608501022
     },
@@ -5268,9 +5268,9 @@
         "len_km": 7,
         "area_km2": 3,
         "municipality": "Basilisa",
-        "is_zod": false,
+        "is_zod": true,
         "households": 258,
-        "no_toilet": 55
+        "no_toilet": 0
       },
       "id": 1608501025
     },
@@ -5312,9 +5312,9 @@
         "len_km": 4,
         "area_km2": 1,
         "municipality": "Basilisa",
-        "is_zod": false,
+        "is_zod": true,
         "households": 132,
-        "no_toilet": 11
+        "no_toilet": 0
       },
       "id": 1608501026
     },
@@ -5384,9 +5384,9 @@
         "len_km": 3,
         "area_km2": 0,
         "municipality": "Basilisa",
-        "is_zod": false,
+        "is_zod": true,
         "households": 115,
-        "no_toilet": 22
+        "no_toilet": 0
       },
       "id": 1608501028
     },
@@ -10664,9 +10664,9 @@
         "len_km": 14,
         "area_km2": 4,
         "municipality": "Dinagat",
-        "is_zod": false,
+        "is_zod": true,
         "households": 93,
-        "no_toilet": 1
+        "no_toilet": 0
       },
       "id": 1608503007
     },
@@ -11057,9 +11057,9 @@
         "len_km": 10,
         "area_km2": 2,
         "municipality": "Dinagat",
-        "is_zod": false,
+        "is_zod": true,
         "households": 293,
-        "no_toilet": 10
+        "no_toilet": 0
       },
       "id": 1608503014
     },
@@ -11610,9 +11610,9 @@
         "len_km": 15,
         "area_km2": 4,
         "municipality": "Dinagat",
-        "is_zod": false,
+        "is_zod": true,
         "households": 301,
-        "no_toilet": 46
+        "no_toilet": 0
       },
       "id": 1608503021
     },
@@ -14610,9 +14610,9 @@
         "len_km": 14,
         "area_km2": 3,
         "municipality": "Libjo",
-        "is_zod": false,
+        "is_zod": true,
         "households": 441,
-        "no_toilet": 8
+        "no_toilet": 0
       },
       "id": 1608504010
     },
@@ -15985,9 +15985,9 @@
         "len_km": 14,
         "area_km2": 8,
         "municipality": "Libjo",
-        "is_zod": false,
+        "is_zod": true,
         "households": 273,
-        "no_toilet": 27
+        "no_toilet": 0
       },
       "id": 1608504016
     },
