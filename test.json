@@ -13055,7 +13055,7 @@
         "len_km": 34,
         "area_km2": 17,
         "municipality": "Libjo",
-        "is_zod": false,
+        "is_zod": true,
         "households": 156,
         "no_toilet": 28
       },
@@ -13410,9 +13410,9 @@
         "len_km": 11,
         "area_km2": 6,
         "municipality": "Libjo",
-        "is_zod": false,
+        "is_zod": true,
         "households": 316,
-        "no_toilet": 32
+        "no_toilet": 0
       },
       "id": 1608504005
     },
@@ -13452,9 +13452,9 @@
         "len_km": 28,
         "area_km2": 44,
         "municipality": "Libjo",
-        "is_zod": false,
+        "is_zod": true,
         "households": 428,
-        "no_toilet": 69
+        "no_toilet": 0
       },
       "id": 1608504006
     },
@@ -14991,9 +14991,9 @@
         "len_km": 11,
         "area_km2": 2,
         "municipality": "Libjo",
-        "is_zod": false,
-        "households": 146,
-        "no_toilet": 18
+        "is_zod": true,
+        "households": 147,
+        "no_toilet": 0
       },
       "id": 1608504011
     },
@@ -22059,9 +22059,9 @@
         "len_km": 31,
         "area_km2": 13,
         "municipality": "Tubajon",
-        "is_zod": false,
+        "is_zod": true,
         "households": 170,
-        "no_toilet": 37
+        "no_toilet": 0
       },
       "id": 1608507001
     },
@@ -22312,7 +22312,7 @@
         "len_km": 21,
         "area_km2": 20,
         "municipality": "Tubajon",
-        "is_zod": false,
+        "is_zod": true,
         "households": 446,
         "no_toilet": 114
       },
