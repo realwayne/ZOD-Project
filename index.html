@@ -18,9 +18,13 @@
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
 
   <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
-    #map {
+    #map,
+    #singledropDistributionMap {
       height: 90vh;
     }
   </style>
@@ -49,11 +53,8 @@
       <div class="row g-3">
 
         <div class="col col-md">
-          <div class="card shadow">
-            <div class="card-body p-0">
-              <div id="map"></div>
-
-            </div>
+          <div class="card">
+            <div id="map"></div>
           </div>
         </div>
         <div class="col">
@@ -85,7 +86,7 @@
                   <h6 class="m-0 p-0">ZOD Barangays:</h6>
                 </div>
                 <div class="card-body py-4">
-                  <h1 class="fw-bold display-1 text-center"><span class="fw-bold text-success">74</span>/100</h1>
+                  <h1 class="fw-bold display-1 text-center"><span class="fw-bold text-success">75</span>/100</h1>
                 </div>
               </div>
 
@@ -121,7 +122,7 @@
                     <label class="text-nowrap m-0 p-0 fw-semibold ">Select Municipality: </label>
                     <select class="form-select" id="municipalityDropdown">
                       <option>All</option>
-                      <option> Basilisa</option>
+                      <option>Basilisa</option>
                       <option>Cagdianao</option>
                       <option>Dinagat</option>
                       <option>Libjo</option>
@@ -143,10 +144,74 @@
   </section>
 
 
+  <div class="offcanvas offcanvas-end p-2" tabindex="-1" id="sidebarOffcanvas" aria-labelledby="sidebarOffcanvasLabel">
+
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="sidebarOffcanvasLabel">Barangay Details</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+
+    </div>
+
+    <div class="offcanvas-body">
+      <div>
+        <h6>Geographical Information</h6>
+        <table class="table table-sm table-bordered" id="barangayGeoInfo">
+          <thead class="table-primary">
+            <tr>
+              <th scope="col">Attribute</th>
+              <th scope="col">Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td># of Households</td>
+              <td id="householdCountGeo">-</td>
+            </tr>
+            <tr>
+              <td># of Without Toilet</td>
+              <td id="withoutToiletCountGeo">-</td>
+            </tr>
+            <tr>
+              <td>Barangay Name</td>
+              <td id="detailBarangayNameGeo">-</td>
+            </tr>
+            <tr>
+              <td>Municipality</td>
+              <td id="detailMunicipalityGeo">-</td>
+            </tr>
+            <tr>
+              <td>Province</td>
+              <td id="detailProvinceGeo">-</td>
+            </tr>
+            <tr>
+              <td>Region</td>
+              <td id="detailRegionGeo">-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h6>Benificiaries</h6>
+        <table class="table table-sm table-bordered table-hover" id="benificiariesTable">
+          <thead class="table-secondary">
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Ammount</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+      </div>
+    </div>
+  </div>
+
+
   <!-- LEAFLETJS -->
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
   <script>
+    let Benificiaries = null;
+
     let zodMonitoringPerBarangayChart = null;
     let geojson = null;
     const map = L.map('map', {
@@ -163,6 +228,7 @@
     const satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
       attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
     });
+
 
     // Create a simple style
     function style(feature) {
@@ -222,21 +288,58 @@
         mouseover: highlightFeature,
         mouseout: resetHighlight,
         click: function (e) {
+
+          const sidebarEl = document.getElementById('sidebarOffcanvas');
+          const sidebar = new bootstrap.Offcanvas(sidebarEl);
+          sidebar.toggle();
+
           const props = e.target.feature.properties;
-          const popupContent = `
-                        <h1>${props.adm4_en}</h1>
-                        <b>Households: ${props.households || 0}</b><br>
-                        <b>Without Toilet: ${props.no_toilet || 0}</b><br>
-                        <b>Municipality: ${props.municipality}</b><br>
-                        <b>${props.PROVINCE || 'Province: Dinagat Islands'}</b><br>
-                        <b>${props.REGION || 'Region: Caraga Region'}</b><br>
-                    `;
-          layer.bindPopup(popupContent).openPopup();
+          document.getElementById('householdCountGeo').textContent = props.households || '-';
+          document.getElementById('withoutToiletCountGeo').textContent = props.no_toilet || '-';
+          document.getElementById('detailBarangayNameGeo').textContent = props.adm4_en || '-';
+          document.getElementById('detailMunicipalityGeo').textContent = props.municipality || '-';
+          document.getElementById('detailProvinceGeo').textContent = props.PROVINCE || 'Dinagat Islands';
+          document.getElementById('detailRegionGeo').textContent = props.REGION || 'Caraga Region';
+
+          const barangayID = e.target.feature.id;
+          const filteredBeneficiaries = Benificiaries.filter(b => b.BarangayID == barangayID);
+
+          const benificiariesTableBody = document.querySelector('#benificiariesTable tbody');
+          benificiariesTableBody.innerHTML = '';
+
+          if (filteredBeneficiaries.length === 0) {
+            const row = document.createElement('tr');
+            const noDataCell = document.createElement('td');
+            noDataCell.setAttribute('colspan', '2');
+            noDataCell.textContent = 'No beneficiaries found';
+            row.appendChild(noDataCell);
+            benificiariesTableBody.appendChild(row);
+          } else {
+            filteredBeneficiaries.forEach(benificiary => {
+              const row = document.createElement('tr');
+              const nameCell = document.createElement('td');
+              nameCell.textContent = benificiary.Fullname;
+              const amountCell = document.createElement('td');
+              amountCell.textContent = "-";
+              row.appendChild(nameCell);
+              row.appendChild(amountCell);
+              benificiariesTableBody.appendChild(row);
+            });
+          }
+
+          // const props = e.target.feature.properties;
+          // const popupContent = `
+          //               <h1>${props.adm4_en}</h1>
+          //               <b>Households: ${props.households || 0}</b><br>
+          //               <b>Without Toilet: ${props.no_toilet || 0}</b><br>
+          //               <b>Municipality: ${props.municipality}</b><br>
+          //               <b>${props.PROVINCE || 'Province: Dinagat Islands'}</b><br>
+          //               <b>${props.REGION || 'Region: Caraga Region'}</b><br>
+          //           `;
+          // layer.bindPopup(popupContent).openPopup();
         }
       });
     }
-
-
 
     function renderZODMonitoringByBarangay(features, municipality) {
 
@@ -348,6 +451,12 @@
 
     }
 
+
+    fetch("./beneficiaries.json")
+      .then(res => res.json())
+      .then(beneficiaryData => {
+        Benificiaries = beneficiaryData;
+      });
 
     fetch("./test.json")
       .then(res => res.json())
@@ -705,7 +814,6 @@
         }).addTo(map);
 
 
-
         // Layer Control
         const baseLayers = {
           "OpenStreetMap": osmLayer,
@@ -733,6 +841,8 @@
             map.fitBounds(layer.getBounds());
           }
         });
+
+
 
       });
   </script>

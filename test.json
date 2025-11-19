@@ -22314,7 +22314,7 @@
         "municipality": "Tubajon",
         "is_zod": true,
         "households": 446,
-        "no_toilet": 114
+        "no_toilet": 0
       },
       "id": 1608507003
     },
@@ -22348,9 +22348,9 @@
         "len_km": 18,
         "area_km2": 17,
         "municipality": "Tubajon",
-        "is_zod": false,
+        "is_zod": true,
         "households": 125,
-        "no_toilet": 22
+        "no_toilet": 0
       },
       "id": 1608507004
     },
