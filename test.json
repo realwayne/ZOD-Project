@@ -1858,7 +1858,9 @@
         "municipality": "Basilisa",
         "is_zod": false,
         "households": 232,
-        "no_toilet": 66
+        "no_toilet": 9,
+        "is_singledrop_target": true,
+        "is_ongoing": true
       },
       "id": 1608501010
     },
@@ -4739,7 +4741,9 @@
         "municipality": "Basilisa",
         "is_zod": false,
         "households": 513,
-        "no_toilet": 83
+        "no_toilet": 6,
+        "is_singledrop_target": true,
+        "is_ongoing": true
       },
       "id": 1608501018
     },
@@ -4843,7 +4847,9 @@
         "municipality": "Basilisa",
         "is_zod": true,
         "households": 235,
-        "no_toilet": 0
+        "no_toilet": 0,
+        "is_singledrop_target": true,
+        "is_ongoing": false
       },
       "id": 1608501020
     },
@@ -5126,7 +5132,9 @@
         "municipality": "Basilisa",
         "is_zod": true,
         "households": 193,
-        "no_toilet": 0
+        "no_toilet": 0,
+        "is_singledrop_target": true,
+        "is_ongoing": false
       },
       "id": 1608501022
     },
@@ -5270,7 +5278,9 @@
         "municipality": "Basilisa",
         "is_zod": true,
         "households": 258,
-        "no_toilet": 0
+        "no_toilet": 0,
+        "is_singledrop_target": true,
+        "is_ongoing": false
       },
       "id": 1608501025
     },
@@ -9223,7 +9233,9 @@
         "municipality": "Dinagat",
         "is_zod": true,
         "households": 286,
-        "no_toilet": 0
+        "no_toilet": 0,
+        "is_singledrop_target": true,
+        "is_ongoing": false
       },
       "id": 1608503002
     },
@@ -9791,7 +9803,9 @@
         "municipality": "Dinagat",
         "is_zod": false,
         "households": 155,
-        "no_toilet": 40
+        "no_toilet": 4,
+        "is_singledrop_target": true,
+        "is_ongoing": true
       },
       "id": 1608503003
     },
@@ -10441,7 +10455,9 @@
         "municipality": "Dinagat",
         "is_zod": true,
         "households": 205,
-        "no_toilet": 0
+        "no_toilet": 0,
+        "is_singledrop_target": true,
+        "is_ongoing": false
       },
       "id": 1608503005
     },
@@ -10666,7 +10682,9 @@
         "municipality": "Dinagat",
         "is_zod": true,
         "households": 93,
-        "no_toilet": 0
+        "no_toilet": 0,
+        "is_singledrop_target": true,
+        "is_ongoing": true
       },
       "id": 1608503007
     },
@@ -11612,7 +11630,9 @@
         "municipality": "Dinagat",
         "is_zod": true,
         "households": 301,
-        "no_toilet": 0
+        "no_toilet": 0,
+        "is_singledrop_target": true,
+        "is_ongoing": false
       },
       "id": 1608503021
     },
@@ -13057,7 +13077,9 @@
         "municipality": "Libjo",
         "is_zod": true,
         "households": 156,
-        "no_toilet": 0
+        "no_toilet": 0,
+        "is_singledrop_target": true,
+        "is_ongoing": false
       },
       "id": 1608504002
     },
@@ -13412,7 +13434,9 @@
         "municipality": "Libjo",
         "is_zod": true,
         "households": 316,
-        "no_toilet": 0
+        "no_toilet": 0,
+        "is_singledrop_target": true,
+        "is_ongoing": false
       },
       "id": 1608504005
     },
@@ -13454,7 +13478,9 @@
         "municipality": "Libjo",
         "is_zod": true,
         "households": 428,
-        "no_toilet": 0
+        "no_toilet": 0,
+        "is_singledrop_target": true,
+        "is_ongoing": false
       },
       "id": 1608504006
     },
@@ -13641,7 +13667,9 @@
         "municipality": "Libjo",
         "is_zod": false,
         "households": 142,
-        "no_toilet": 26
+        "no_toilet": 1,
+        "is_singledrop_target": true,
+        "is_ongoing": true
       },
       "id": 1608504008
     },
@@ -14612,7 +14640,9 @@
         "municipality": "Libjo",
         "is_zod": true,
         "households": 441,
-        "no_toilet": 0
+        "no_toilet": 0,
+        "is_singledrop_target": true,
+        "is_ongoing": false
       },
       "id": 1608504010
     },
@@ -14993,7 +15023,9 @@
         "municipality": "Libjo",
         "is_zod": true,
         "households": 147,
-        "no_toilet": 0
+        "no_toilet": 0,
+        "is_singledrop_target": true,
+        "is_ongoing": false
       },
       "id": 1608504011
     },
@@ -15638,7 +15670,9 @@
         "municipality": "Libjo",
         "is_zod": true,
         "households": 369,
-        "no_toilet": 0
+        "no_toilet": 0,
+        "is_singledrop_target": true,
+        "is_ongoing": false
       },
       "id": 1608504013
     },
@@ -15933,7 +15967,9 @@
         "municipality": "Libjo",
         "is_zod": true,
         "households": 264,
-        "no_toilet": 0
+        "no_toilet": 0,
+        "is_singledrop_target": true,
+        "is_ongoing": false
       },
       "id": 1608504015
     },
@@ -15987,7 +16023,9 @@
         "municipality": "Libjo",
         "is_zod": true,
         "households": 273,
-        "no_toilet": 0
+        "no_toilet": 0,
+        "is_singledrop_target": true,
+        "is_ongoing": false
       },
       "id": 1608504016
     },
@@ -20352,7 +20390,9 @@
         "municipality": "San Jose",
         "is_zod": false,
         "households": 450,
-        "no_toilet": 103
+        "no_toilet": 54,
+        "is_singledrop_target": true,
+        "is_ongoing": true
       },
       "id": 1608506002
     },
@@ -20530,7 +20570,9 @@
         "municipality": "San Jose",
         "is_zod": false,
         "households": 479,
-        "no_toilet": 27
+        "no_toilet": 9,
+        "is_singledrop_target": true,
+        "is_ongoing": true
       },
       "id": 1608506003
     },
@@ -20975,7 +21017,9 @@
         "municipality": "San Jose",
         "is_zod": false,
         "households": 253,
-        "no_toilet": 41
+        "no_toilet": 6,
+        "is_singledrop_target": true,
+        "is_ongoing": true
       },
       "id": 1608506008
     },
@@ -22061,7 +22105,9 @@
         "municipality": "Tubajon",
         "is_zod": true,
         "households": 170,
-        "no_toilet": 0
+        "no_toilet": 0,
+        "is_singledrop_target": true,
+        "is_ongoing": false
       },
       "id": 1608507001
     },
@@ -22314,7 +22360,9 @@
         "municipality": "Tubajon",
         "is_zod": true,
         "households": 446,
-        "no_toilet": 0
+        "no_toilet": 0,
+        "is_singledrop_target": true,
+        "is_ongoing": false
       },
       "id": 1608507003
     },
@@ -22350,7 +22398,9 @@
         "municipality": "Tubajon",
         "is_zod": true,
         "households": 125,
-        "no_toilet": 0
+        "no_toilet": 0,
+        "is_singledrop_target": true,
+        "is_ongoing": false
       },
       "id": 1608507004
     },
@@ -22798,7 +22848,9 @@
         "municipality": "Tubajon",
         "is_zod": false,
         "households": 347,
-        "no_toilet": 79
+        "no_toilet": 8,
+        "is_singledrop_target": true,
+        "is_ongoing": true
       },
       "id": 1608507009
     }

@@ -27,6 +27,21 @@
     #singledropDistributionMap {
       height: 90vh;
     }
+
+    .legend {
+      padding: 10px;
+      background: white;
+      border-radius: 5px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .legend i {
+      width: 18px;
+      height: 18px;
+      float: left;
+      margin-right: 8px;
+      opacity: 0.7;
+    }
   </style>
 
 </head>
@@ -45,6 +60,14 @@
         </div>
       </div>
 
+
+      <div class="d-flex justify-content-center align-items-center gap-2">
+        <img class="singledrop-logo img-thumbnail" src="./Singledrop_logo.png" alt="Province of Dinagat Islands" />
+        <button id="toggleExpansionButton" class="btn btn-outline-primary border">
+          <i class="fa-solid fa-expand"></i>
+        </button>
+      </div>
+
     </div>
   </section>
 
@@ -57,7 +80,7 @@
             <div id="map"></div>
           </div>
         </div>
-        <div class="col">
+        <div class="col" id="rightSideStatistics">
           <div class="row g-3">
             <div class="col">
 
@@ -229,6 +252,40 @@
       attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
     });
 
+    // Create legend
+    const legend = L.control({ position: 'bottomleft' });
+
+    legend.onAdd = function (map) {
+      const div = L.DomUtil.create('div', 'legend');
+      div.innerHTML = `
+        <h4>Map Features</h4>
+        <div class="legend-item pb-1">
+            <i class="legend-icon" style="background: #3388ff; border: 2px solid #3388ff"></i>
+            <span>Singledrop Targets</span>
+        </div>
+        <div class="legend-item pb-1">
+            <i class="legend-icon" style="background: orange"></i>
+            <span>Non ZOD Barangays</span>
+        </div>
+        <div class="legend-item pb-1">
+            <i class="legend-icon" style="background: green"></i>
+            <span>ZOD Barangays</span>
+        </div>
+      `;
+      return div;
+    };
+
+    legend.addTo(map);
+
+    document.querySelector('#toggleExpansionButton').addEventListener('click', (e) => {
+
+      e.currentTarget.classList.toggle("btn-primary");
+
+      const rightSideStatistics = document.getElementById('rightSideStatistics');
+      rightSideStatistics.classList.toggle('d-none');
+      map.invalidateSize();
+    });
+
 
     // Create a simple style
     function style(feature) {
@@ -236,6 +293,17 @@
       if (feature.properties.is_zod) {
         return ({
           fillColor: "green",
+          weight: 3,
+          opacity: 1,
+          color: "black",
+          dashArray: "3",
+          fillOpacity: 0.5
+        });
+      }
+
+      if (feature.properties.is_singledrop_target) {
+        return ({
+          fillColor: "blue",
           weight: 3,
           opacity: 1,
           color: "black",
