@@ -22846,9 +22846,9 @@
         "len_km": 17,
         "area_km2": 14,
         "municipality": "Tubajon",
-        "is_zod": false,
+        "is_zod": true,
         "households": 347,
-        "no_toilet": 8,
+        "no_toilet": 0,
         "is_singledrop_target": true,
         "is_ongoing": true
       },
