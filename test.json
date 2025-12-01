@@ -11409,9 +11409,9 @@
         "len_km": 11,
         "area_km2": 2,
         "municipality": "Dinagat",
-        "is_zod": false,
+        "is_zod": true,
         "households": 446,
-        "no_toilet": 78
+        "no_toilet": 0
       },
       "id": 1608503016
     },
